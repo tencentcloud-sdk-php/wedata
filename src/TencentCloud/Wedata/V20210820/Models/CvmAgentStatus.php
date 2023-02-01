@@ -18,35 +18,35 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 对比规则
+ * 采集器状态统计
  *
- * @method array getItems() 获取比较条件列表
+ * @method string getStatus() 获取agent状态
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setItems(array $Items) 设置比较条件列表
+ * @method void setStatus(string $Status) 设置agent状态
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getCycleStep() 获取周期性模板默认周期，单位秒
+ * @method integer getCount() 获取对应状态的agent总数
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setCycleStep(integer $CycleStep) 设置周期性模板默认周期，单位秒
+ * @method void setCount(integer $Count) 设置对应状态的agent总数
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class CompareRule extends AbstractModel
+class CvmAgentStatus extends AbstractModel
 {
     /**
-     * @var array 比较条件列表
+     * @var string agent状态
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Items;
+    public $Status;
 
     /**
-     * @var integer 周期性模板默认周期，单位秒
+     * @var integer 对应状态的agent总数
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $CycleStep;
+    public $Count;
 
     /**
-     * @param array $Items 比较条件列表
+     * @param string $Status agent状态
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $CycleStep 周期性模板默认周期，单位秒
+     * @param integer $Count 对应状态的agent总数
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -62,17 +62,12 @@ class CompareRule extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Items",$param) and $param["Items"] !== null) {
-            $this->Items = [];
-            foreach ($param["Items"] as $key => $value){
-                $obj = new CompareRuleItem();
-                $obj->deserialize($value);
-                array_push($this->Items, $obj);
-            }
+        if (array_key_exists("Status",$param) and $param["Status"] !== null) {
+            $this->Status = $param["Status"];
         }
 
-        if (array_key_exists("CycleStep",$param) and $param["CycleStep"] !== null) {
-            $this->CycleStep = $param["CycleStep"];
+        if (array_key_exists("Count",$param) and $param["Count"] !== null) {
+            $this->Count = $param["Count"];
         }
     }
 }

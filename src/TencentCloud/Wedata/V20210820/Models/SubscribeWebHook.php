@@ -18,35 +18,35 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 对比规则
+ * 群机器人订阅配置
  *
- * @method array getItems() 获取比较条件列表
+ * @method string getHookType() 获取群机器人类型，当前支持飞书
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setItems(array $Items) 设置比较条件列表
+ * @method void setHookType(string $HookType) 设置群机器人类型，当前支持飞书
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getCycleStep() 获取周期性模板默认周期，单位秒
+ * @method string getHookAddress() 获取群机器人webhook地址，配置方式参考https://cloud.tencent.com/document/product/1254/70736
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setCycleStep(integer $CycleStep) 设置周期性模板默认周期，单位秒
+ * @method void setHookAddress(string $HookAddress) 设置群机器人webhook地址，配置方式参考https://cloud.tencent.com/document/product/1254/70736
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class CompareRule extends AbstractModel
+class SubscribeWebHook extends AbstractModel
 {
     /**
-     * @var array 比较条件列表
+     * @var string 群机器人类型，当前支持飞书
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Items;
+    public $HookType;
 
     /**
-     * @var integer 周期性模板默认周期，单位秒
+     * @var string 群机器人webhook地址，配置方式参考https://cloud.tencent.com/document/product/1254/70736
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $CycleStep;
+    public $HookAddress;
 
     /**
-     * @param array $Items 比较条件列表
+     * @param string $HookType 群机器人类型，当前支持飞书
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $CycleStep 周期性模板默认周期，单位秒
+     * @param string $HookAddress 群机器人webhook地址，配置方式参考https://cloud.tencent.com/document/product/1254/70736
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -62,17 +62,12 @@ class CompareRule extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Items",$param) and $param["Items"] !== null) {
-            $this->Items = [];
-            foreach ($param["Items"] as $key => $value){
-                $obj = new CompareRuleItem();
-                $obj->deserialize($value);
-                array_push($this->Items, $obj);
-            }
+        if (array_key_exists("HookType",$param) and $param["HookType"] !== null) {
+            $this->HookType = $param["HookType"];
         }
 
-        if (array_key_exists("CycleStep",$param) and $param["CycleStep"] !== null) {
-            $this->CycleStep = $param["CycleStep"];
+        if (array_key_exists("HookAddress",$param) and $param["HookAddress"] !== null) {
+            $this->HookAddress = $param["HookAddress"];
         }
     }
 }
