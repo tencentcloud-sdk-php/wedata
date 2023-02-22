@@ -22,6 +22,10 @@ use TencentCloud\Common\AbstractModel;
  *
  * @method string getToken() 获取长连接临时token
  * @method void setToken(string $Token) 设置长连接临时token
+ * @method string getData() 获取长连接临时token。与Token相同含义，优先取Data，Data为空时，取Token。
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setData(string $Data) 设置长连接临时token。与Token相同含义，优先取Data，Data为空时，取Token。
+注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
@@ -33,12 +37,20 @@ class DescribeOfflineTaskTokenResponse extends AbstractModel
     public $Token;
 
     /**
+     * @var string 长连接临时token。与Token相同含义，优先取Data，Data为空时，取Token。
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $Data;
+
+    /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     public $RequestId;
 
     /**
      * @param string $Token 长连接临时token
+     * @param string $Data 长连接临时token。与Token相同含义，优先取Data，Data为空时，取Token。
+注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -56,6 +68,10 @@ class DescribeOfflineTaskTokenResponse extends AbstractModel
         }
         if (array_key_exists("Token",$param) and $param["Token"] !== null) {
             $this->Token = $param["Token"];
+        }
+
+        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
+            $this->Data = $param["Data"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
