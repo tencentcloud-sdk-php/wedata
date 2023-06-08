@@ -18,32 +18,22 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeIntegrationTasks返回参数结构体
+ * UploadContent返回参数结构体
  *
- * @method array getTaskInfoSet() 获取任务列表
+ * @method ScriptInfoResponse getScriptInfo() 获取脚本信息响应
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTaskInfoSet(array $TaskInfoSet) 设置任务列表
-注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getTotalCount() 获取任务总数
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTotalCount(integer $TotalCount) 设置任务总数
+ * @method void setScriptInfo(ScriptInfoResponse $ScriptInfo) 设置脚本信息响应
 注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeIntegrationTasksResponse extends AbstractModel
+class UploadContentResponse extends AbstractModel
 {
     /**
-     * @var array 任务列表
+     * @var ScriptInfoResponse 脚本信息响应
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TaskInfoSet;
-
-    /**
-     * @var integer 任务总数
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $TotalCount;
+    public $ScriptInfo;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -51,9 +41,7 @@ class DescribeIntegrationTasksResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param array $TaskInfoSet 任务列表
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $TotalCount 任务总数
+     * @param ScriptInfoResponse $ScriptInfo 脚本信息响应
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
@@ -70,17 +58,9 @@ class DescribeIntegrationTasksResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("TaskInfoSet",$param) and $param["TaskInfoSet"] !== null) {
-            $this->TaskInfoSet = [];
-            foreach ($param["TaskInfoSet"] as $key => $value){
-                $obj = new IntegrationTaskInfo();
-                $obj->deserialize($value);
-                array_push($this->TaskInfoSet, $obj);
-            }
-        }
-
-        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
-            $this->TotalCount = $param["TotalCount"];
+        if (array_key_exists("ScriptInfo",$param) and $param["ScriptInfo"] !== null) {
+            $this->ScriptInfo = new ScriptInfoResponse();
+            $this->ScriptInfo->deserialize($param["ScriptInfo"]);
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
