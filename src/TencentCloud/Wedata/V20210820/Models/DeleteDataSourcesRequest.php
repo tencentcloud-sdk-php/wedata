@@ -22,6 +22,8 @@ use TencentCloud\Common\AbstractModel;
  *
  * @method array getIds() 获取id列表
  * @method void setIds(array $Ids) 设置id列表
+ * @method string getProjectId() 获取项目id
+ * @method void setProjectId(string $ProjectId) 设置项目id
  */
 class DeleteDataSourcesRequest extends AbstractModel
 {
@@ -31,7 +33,13 @@ class DeleteDataSourcesRequest extends AbstractModel
     public $Ids;
 
     /**
+     * @var string 项目id
+     */
+    public $ProjectId;
+
+    /**
      * @param array $Ids id列表
+     * @param string $ProjectId 项目id
      */
     function __construct()
     {
@@ -48,6 +56,10 @@ class DeleteDataSourcesRequest extends AbstractModel
         }
         if (array_key_exists("Ids",$param) and $param["Ids"] !== null) {
             $this->Ids = $param["Ids"];
+        }
+
+        if (array_key_exists("ProjectId",$param) and $param["ProjectId"] !== null) {
+            $this->ProjectId = $param["ProjectId"];
         }
     }
 }
