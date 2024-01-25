@@ -18,22 +18,32 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteProjectParamDs返回参数结构体
+ * DescribeCustomFunctionVersionList返回参数结构体
  *
- * @method boolean getData() 获取结果 true 删除成功
-false 删除失败
- * @method void setData(boolean $Data) 设置结果 true 删除成功
-false 删除失败
+ * @method array getVersions() 获取函数提交版本列表
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setVersions(array $Versions) 设置函数提交版本列表
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getErrorMessage() 获取无
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setErrorMessage(string $ErrorMessage) 设置无
+注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteProjectParamDsResponse extends AbstractModel
+class DescribeCustomFunctionVersionListResponse extends AbstractModel
 {
     /**
-     * @var boolean 结果 true 删除成功
-false 删除失败
+     * @var array 函数提交版本列表
+注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Data;
+    public $Versions;
+
+    /**
+     * @var string 无
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $ErrorMessage;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -41,8 +51,10 @@ false 删除失败
     public $RequestId;
 
     /**
-     * @param boolean $Data 结果 true 删除成功
-false 删除失败
+     * @param array $Versions 函数提交版本列表
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $ErrorMessage 无
+注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -58,8 +70,17 @@ false 删除失败
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("Versions",$param) and $param["Versions"] !== null) {
+            $this->Versions = [];
+            foreach ($param["Versions"] as $key => $value){
+                $obj = new FunctionVersion();
+                $obj->deserialize($value);
+                array_push($this->Versions, $obj);
+            }
+        }
+
+        if (array_key_exists("ErrorMessage",$param) and $param["ErrorMessage"] !== null) {
+            $this->ErrorMessage = $param["ErrorMessage"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

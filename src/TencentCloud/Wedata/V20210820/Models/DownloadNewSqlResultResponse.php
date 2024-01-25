@@ -18,22 +18,26 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteProjectParamDs返回参数结构体
+ * DownloadNewSqlResult返回参数结构体
  *
- * @method boolean getData() 获取结果 true 删除成功
-false 删除失败
- * @method void setData(boolean $Data) 设置结果 true 删除成功
-false 删除失败
+ * @method string getCosPath() 获取下载结果对应的cos path
+ * @method void setCosPath(string $CosPath) 设置下载结果对应的cos path
+ * @method string getCosBucketName() 获取下载结果对应的bucketName
+ * @method void setCosBucketName(string $CosBucketName) 设置下载结果对应的bucketName
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteProjectParamDsResponse extends AbstractModel
+class DownloadNewSqlResultResponse extends AbstractModel
 {
     /**
-     * @var boolean 结果 true 删除成功
-false 删除失败
+     * @var string 下载结果对应的cos path
      */
-    public $Data;
+    public $CosPath;
+
+    /**
+     * @var string 下载结果对应的bucketName
+     */
+    public $CosBucketName;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -41,8 +45,8 @@ false 删除失败
     public $RequestId;
 
     /**
-     * @param boolean $Data 结果 true 删除成功
-false 删除失败
+     * @param string $CosPath 下载结果对应的cos path
+     * @param string $CosBucketName 下载结果对应的bucketName
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -58,8 +62,12 @@ false 删除失败
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("CosPath",$param) and $param["CosPath"] !== null) {
+            $this->CosPath = $param["CosPath"];
+        }
+
+        if (array_key_exists("CosBucketName",$param) and $param["CosBucketName"] !== null) {
+            $this->CosBucketName = $param["CosBucketName"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

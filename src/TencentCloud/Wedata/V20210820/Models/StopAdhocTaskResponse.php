@@ -18,22 +18,19 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteProjectParamDs返回参数结构体
+ * StopAdhocTask返回参数结构体
  *
- * @method boolean getData() 获取结果 true 删除成功
-false 删除失败
- * @method void setData(boolean $Data) 设置结果 true 删除成功
-false 删除失败
+ * @method string getResult() 获取终止请求状态
+ * @method void setResult(string $Result) 设置终止请求状态
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteProjectParamDsResponse extends AbstractModel
+class StopAdhocTaskResponse extends AbstractModel
 {
     /**
-     * @var boolean 结果 true 删除成功
-false 删除失败
+     * @var string 终止请求状态
      */
-    public $Data;
+    public $Result;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -41,8 +38,7 @@ false 删除失败
     public $RequestId;
 
     /**
-     * @param boolean $Data 结果 true 删除成功
-false 删除失败
+     * @param string $Result 终止请求状态
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -58,8 +54,8 @@ false 删除失败
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("Result",$param) and $param["Result"] !== null) {
+            $this->Result = $param["Result"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

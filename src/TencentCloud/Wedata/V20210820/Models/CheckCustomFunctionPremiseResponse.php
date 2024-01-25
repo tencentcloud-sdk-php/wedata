@@ -18,22 +18,42 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteTaskDs返回参数结构体
+ * CheckCustomFunctionPremise返回参数结构体
  *
- * @method boolean getData() 获取是否删除成功
+ * @method boolean getSparkInstalled() 获取Spark 是否安装
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setData(boolean $Data) 设置是否删除成功
+ * @method void setSparkInstalled(boolean $SparkInstalled) 设置Spark 是否安装
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method boolean getLivyInstalled() 获取Livy 是否安装
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setLivyInstalled(boolean $LivyInstalled) 设置Livy 是否安装
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getErrorMessage() 获取无
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setErrorMessage(string $ErrorMessage) 设置无
 注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteTaskDsResponse extends AbstractModel
+class CheckCustomFunctionPremiseResponse extends AbstractModel
 {
     /**
-     * @var boolean 是否删除成功
+     * @var boolean Spark 是否安装
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Data;
+    public $SparkInstalled;
+
+    /**
+     * @var boolean Livy 是否安装
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $LivyInstalled;
+
+    /**
+     * @var string 无
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $ErrorMessage;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -41,7 +61,11 @@ class DeleteTaskDsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param boolean $Data 是否删除成功
+     * @param boolean $SparkInstalled Spark 是否安装
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param boolean $LivyInstalled Livy 是否安装
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $ErrorMessage 无
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
@@ -58,8 +82,16 @@ class DeleteTaskDsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("SparkInstalled",$param) and $param["SparkInstalled"] !== null) {
+            $this->SparkInstalled = $param["SparkInstalled"];
+        }
+
+        if (array_key_exists("LivyInstalled",$param) and $param["LivyInstalled"] !== null) {
+            $this->LivyInstalled = $param["LivyInstalled"];
+        }
+
+        if (array_key_exists("ErrorMessage",$param) and $param["ErrorMessage"] !== null) {
+            $this->ErrorMessage = $param["ErrorMessage"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

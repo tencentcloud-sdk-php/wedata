@@ -18,22 +18,43 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteTaskDs返回参数结构体
+ * DescribeTestRun返回参数结构体
  *
- * @method boolean getData() 获取是否删除成功
+ * @method string getInstanceKey() 获取任务实例Id
+ * @method void setInstanceKey(string $InstanceKey) 设置任务实例Id
+ * @method string getStatus() 获取当前任务状态
+ * @method void setStatus(string $Status) 设置当前任务状态
+ * @method boolean getFinished() 获取任务是否结束
+ * @method void setFinished(boolean $Finished) 设置任务是否结束
+ * @method string getLogContent() 获取日志内容
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setData(boolean $Data) 设置是否删除成功
+ * @method void setLogContent(string $LogContent) 设置日志内容
 注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteTaskDsResponse extends AbstractModel
+class DescribeTestRunResponse extends AbstractModel
 {
     /**
-     * @var boolean 是否删除成功
+     * @var string 任务实例Id
+     */
+    public $InstanceKey;
+
+    /**
+     * @var string 当前任务状态
+     */
+    public $Status;
+
+    /**
+     * @var boolean 任务是否结束
+     */
+    public $Finished;
+
+    /**
+     * @var string 日志内容
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Data;
+    public $LogContent;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -41,7 +62,10 @@ class DeleteTaskDsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param boolean $Data 是否删除成功
+     * @param string $InstanceKey 任务实例Id
+     * @param string $Status 当前任务状态
+     * @param boolean $Finished 任务是否结束
+     * @param string $LogContent 日志内容
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
@@ -58,8 +82,20 @@ class DeleteTaskDsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("InstanceKey",$param) and $param["InstanceKey"] !== null) {
+            $this->InstanceKey = $param["InstanceKey"];
+        }
+
+        if (array_key_exists("Status",$param) and $param["Status"] !== null) {
+            $this->Status = $param["Status"];
+        }
+
+        if (array_key_exists("Finished",$param) and $param["Finished"] !== null) {
+            $this->Finished = $param["Finished"];
+        }
+
+        if (array_key_exists("LogContent",$param) and $param["LogContent"] !== null) {
+            $this->LogContent = $param["LogContent"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

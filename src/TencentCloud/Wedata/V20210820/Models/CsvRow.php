@@ -18,32 +18,36 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteTaskDs返回参数结构体
+ * Csv 读取行数据
  *
- * @method boolean getData() 获取是否删除成功
+ * @method integer getRowNumber() 获取行号
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setData(boolean $Data) 设置是否删除成功
+ * @method void setRowNumber(integer $RowNumber) 设置行号
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
- * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+ * @method array getColumnValues() 获取列数据
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setColumnValues(array $ColumnValues) 设置列数据
+注意：此字段可能返回 null，表示取不到有效值。
  */
-class DeleteTaskDsResponse extends AbstractModel
+class CsvRow extends AbstractModel
 {
     /**
-     * @var boolean 是否删除成功
+     * @var integer 行号
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Data;
+    public $RowNumber;
 
     /**
-     * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     */
-    public $RequestId;
-
-    /**
-     * @param boolean $Data 是否删除成功
+     * @var array 列数据
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     */
+    public $ColumnValues;
+
+    /**
+     * @param integer $RowNumber 行号
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param array $ColumnValues 列数据
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
@@ -58,12 +62,17 @@ class DeleteTaskDsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("RowNumber",$param) and $param["RowNumber"] !== null) {
+            $this->RowNumber = $param["RowNumber"];
         }
 
-        if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
-            $this->RequestId = $param["RequestId"];
+        if (array_key_exists("ColumnValues",$param) and $param["ColumnValues"] !== null) {
+            $this->ColumnValues = [];
+            foreach ($param["ColumnValues"] as $key => $value){
+                $obj = new RowColumn();
+                $obj->deserialize($value);
+                array_push($this->ColumnValues, $obj);
+            }
         }
     }
 }

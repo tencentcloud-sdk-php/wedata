@@ -18,22 +18,33 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteProjectParamDs返回参数结构体
+ * SubmitTestRun返回参数结构体
  *
- * @method boolean getData() 获取结果 true 删除成功
-false 删除失败
- * @method void setData(boolean $Data) 设置结果 true 删除成功
-false 删除失败
+ * @method string getInstanceKey() 获取任务实例Id
+ * @method void setInstanceKey(string $InstanceKey) 设置任务实例Id
+ * @method string getTaskId() 获取任务Id
+ * @method void setTaskId(string $TaskId) 设置任务Id
+ * @method string getCurrRunDate() 获取实例运行时间
+ * @method void setCurrRunDate(string $CurrRunDate) 设置实例运行时间
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteProjectParamDsResponse extends AbstractModel
+class SubmitTestRunResponse extends AbstractModel
 {
     /**
-     * @var boolean 结果 true 删除成功
-false 删除失败
+     * @var string 任务实例Id
      */
-    public $Data;
+    public $InstanceKey;
+
+    /**
+     * @var string 任务Id
+     */
+    public $TaskId;
+
+    /**
+     * @var string 实例运行时间
+     */
+    public $CurrRunDate;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -41,8 +52,9 @@ false 删除失败
     public $RequestId;
 
     /**
-     * @param boolean $Data 结果 true 删除成功
-false 删除失败
+     * @param string $InstanceKey 任务实例Id
+     * @param string $TaskId 任务Id
+     * @param string $CurrRunDate 实例运行时间
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -58,8 +70,16 @@ false 删除失败
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("InstanceKey",$param) and $param["InstanceKey"] !== null) {
+            $this->InstanceKey = $param["InstanceKey"];
+        }
+
+        if (array_key_exists("TaskId",$param) and $param["TaskId"] !== null) {
+            $this->TaskId = $param["TaskId"];
+        }
+
+        if (array_key_exists("CurrRunDate",$param) and $param["CurrRunDate"] !== null) {
+            $this->CurrRunDate = $param["CurrRunDate"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

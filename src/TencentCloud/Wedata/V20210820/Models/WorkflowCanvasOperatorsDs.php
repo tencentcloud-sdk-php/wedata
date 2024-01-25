@@ -18,32 +18,36 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteTaskDs返回参数结构体
+ * WorkflowCanvasOperatorDs
  *
- * @method boolean getData() 获取是否删除成功
+ * @method integer getOperatorId() 获取操作人ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setData(boolean $Data) 设置是否删除成功
+ * @method void setOperatorId(integer $OperatorId) 设置操作人ID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
- * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+ * @method string getOperatorName() 获取操作人名称
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setOperatorName(string $OperatorName) 设置操作人名称
+注意：此字段可能返回 null，表示取不到有效值。
  */
-class DeleteTaskDsResponse extends AbstractModel
+class WorkflowCanvasOperatorsDs extends AbstractModel
 {
     /**
-     * @var boolean 是否删除成功
+     * @var integer 操作人ID
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Data;
+    public $OperatorId;
 
     /**
-     * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     */
-    public $RequestId;
-
-    /**
-     * @param boolean $Data 是否删除成功
+     * @var string 操作人名称
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     */
+    public $OperatorName;
+
+    /**
+     * @param integer $OperatorId 操作人ID
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $OperatorName 操作人名称
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
@@ -58,12 +62,12 @@ class DeleteTaskDsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("OperatorId",$param) and $param["OperatorId"] !== null) {
+            $this->OperatorId = $param["OperatorId"];
         }
 
-        if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
-            $this->RequestId = $param["RequestId"];
+        if (array_key_exists("OperatorName",$param) and $param["OperatorName"] !== null) {
+            $this->OperatorName = $param["OperatorName"];
         }
     }
 }

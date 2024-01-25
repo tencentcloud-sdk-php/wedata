@@ -18,22 +18,40 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteProjectParamDs返回参数结构体
+ * CommitWorkflow返回参数结构体
  *
- * @method boolean getData() 获取结果 true 删除成功
-false 删除失败
- * @method void setData(boolean $Data) 设置结果 true 删除成功
-false 删除失败
+ * @method string getProjectId() 获取项目编号
+ * @method void setProjectId(string $ProjectId) 设置项目编号
+ * @method string getWorkflowId() 获取工作流编号
+ * @method void setWorkflowId(string $WorkflowId) 设置工作流编号
+ * @method string getVersionNum() 获取版本序号
+ * @method void setVersionNum(string $VersionNum) 设置版本序号
+ * @method string getVersionId() 获取版本编号
+ * @method void setVersionId(string $VersionId) 设置版本编号
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteProjectParamDsResponse extends AbstractModel
+class CommitWorkflowResponse extends AbstractModel
 {
     /**
-     * @var boolean 结果 true 删除成功
-false 删除失败
+     * @var string 项目编号
      */
-    public $Data;
+    public $ProjectId;
+
+    /**
+     * @var string 工作流编号
+     */
+    public $WorkflowId;
+
+    /**
+     * @var string 版本序号
+     */
+    public $VersionNum;
+
+    /**
+     * @var string 版本编号
+     */
+    public $VersionId;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -41,8 +59,10 @@ false 删除失败
     public $RequestId;
 
     /**
-     * @param boolean $Data 结果 true 删除成功
-false 删除失败
+     * @param string $ProjectId 项目编号
+     * @param string $WorkflowId 工作流编号
+     * @param string $VersionNum 版本序号
+     * @param string $VersionId 版本编号
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -58,8 +78,20 @@ false 删除失败
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("ProjectId",$param) and $param["ProjectId"] !== null) {
+            $this->ProjectId = $param["ProjectId"];
+        }
+
+        if (array_key_exists("WorkflowId",$param) and $param["WorkflowId"] !== null) {
+            $this->WorkflowId = $param["WorkflowId"];
+        }
+
+        if (array_key_exists("VersionNum",$param) and $param["VersionNum"] !== null) {
+            $this->VersionNum = $param["VersionNum"];
+        }
+
+        if (array_key_exists("VersionId",$param) and $param["VersionId"] !== null) {
+            $this->VersionId = $param["VersionId"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

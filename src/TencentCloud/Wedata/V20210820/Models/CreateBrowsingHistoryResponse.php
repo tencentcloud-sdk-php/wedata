@@ -18,20 +18,17 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteProjectParamDs返回参数结构体
+ * CreateBrowsingHistory返回参数结构体
  *
- * @method boolean getData() 获取结果 true 删除成功
-false 删除失败
- * @method void setData(boolean $Data) 设置结果 true 删除成功
-false 删除失败
+ * @method BooleanResponse getData() 获取浏览历史列表
+ * @method void setData(BooleanResponse $Data) 设置浏览历史列表
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteProjectParamDsResponse extends AbstractModel
+class CreateBrowsingHistoryResponse extends AbstractModel
 {
     /**
-     * @var boolean 结果 true 删除成功
-false 删除失败
+     * @var BooleanResponse 浏览历史列表
      */
     public $Data;
 
@@ -41,8 +38,7 @@ false 删除失败
     public $RequestId;
 
     /**
-     * @param boolean $Data 结果 true 删除成功
-false 删除失败
+     * @param BooleanResponse $Data 浏览历史列表
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -59,7 +55,8 @@ false 删除失败
             return;
         }
         if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+            $this->Data = new BooleanResponse();
+            $this->Data->deserialize($param["Data"]);
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

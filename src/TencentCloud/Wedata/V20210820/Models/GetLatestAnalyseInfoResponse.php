@@ -18,22 +18,26 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteProjectParamDs返回参数结构体
+ * GetLatestAnalyseInfo返回参数结构体
  *
- * @method boolean getData() 获取结果 true 删除成功
-false 删除失败
- * @method void setData(boolean $Data) 设置结果 true 删除成功
-false 删除失败
+ * @method string getProjectId() 获取项目Id
+ * @method void setProjectId(string $ProjectId) 设置项目Id
+ * @method LatestAnalyseInfoTask getTask() 获取任务实体
+ * @method void setTask(LatestAnalyseInfoTask $Task) 设置任务实体
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteProjectParamDsResponse extends AbstractModel
+class GetLatestAnalyseInfoResponse extends AbstractModel
 {
     /**
-     * @var boolean 结果 true 删除成功
-false 删除失败
+     * @var string 项目Id
      */
-    public $Data;
+    public $ProjectId;
+
+    /**
+     * @var LatestAnalyseInfoTask 任务实体
+     */
+    public $Task;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -41,8 +45,8 @@ false 删除失败
     public $RequestId;
 
     /**
-     * @param boolean $Data 结果 true 删除成功
-false 删除失败
+     * @param string $ProjectId 项目Id
+     * @param LatestAnalyseInfoTask $Task 任务实体
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -58,8 +62,13 @@ false 删除失败
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("ProjectId",$param) and $param["ProjectId"] !== null) {
+            $this->ProjectId = $param["ProjectId"];
+        }
+
+        if (array_key_exists("Task",$param) and $param["Task"] !== null) {
+            $this->Task = new LatestAnalyseInfoTask();
+            $this->Task->deserialize($param["Task"]);
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

@@ -18,32 +18,36 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteTaskDs返回参数结构体
+ * Csv 每一行的列元数据
  *
- * @method boolean getData() 获取是否删除成功
+ * @method integer getColumnNumber() 获取列号
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setData(boolean $Data) 设置是否删除成功
+ * @method void setColumnNumber(integer $ColumnNumber) 设置列号
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
- * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+ * @method string getValue() 获取column 值
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setValue(string $Value) 设置column 值
+注意：此字段可能返回 null，表示取不到有效值。
  */
-class DeleteTaskDsResponse extends AbstractModel
+class RowColumn extends AbstractModel
 {
     /**
-     * @var boolean 是否删除成功
+     * @var integer 列号
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Data;
+    public $ColumnNumber;
 
     /**
-     * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     */
-    public $RequestId;
-
-    /**
-     * @param boolean $Data 是否删除成功
+     * @var string column 值
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     */
+    public $Value;
+
+    /**
+     * @param integer $ColumnNumber 列号
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $Value column 值
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
@@ -58,12 +62,12 @@ class DeleteTaskDsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("ColumnNumber",$param) and $param["ColumnNumber"] !== null) {
+            $this->ColumnNumber = $param["ColumnNumber"];
         }
 
-        if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
-            $this->RequestId = $param["RequestId"];
+        if (array_key_exists("Value",$param) and $param["Value"] !== null) {
+            $this->Value = $param["Value"];
         }
     }
 }

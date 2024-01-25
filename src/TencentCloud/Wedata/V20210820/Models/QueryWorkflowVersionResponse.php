@@ -18,22 +18,36 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteTaskDs返回参数结构体
+ * QueryWorkflowVersion返回参数结构体
  *
- * @method boolean getData() 获取是否删除成功
+ * @method string getProjectId() 获取项目编号
+ * @method void setProjectId(string $ProjectId) 设置项目编号
+ * @method string getWorkflowId() 获取工作流编号
+ * @method void setWorkflowId(string $WorkflowId) 设置工作流编号
+ * @method array getVersionInfos() 获取版本信息列表
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setData(boolean $Data) 设置是否删除成功
+ * @method void setVersionInfos(array $VersionInfos) 设置版本信息列表
 注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteTaskDsResponse extends AbstractModel
+class QueryWorkflowVersionResponse extends AbstractModel
 {
     /**
-     * @var boolean 是否删除成功
+     * @var string 项目编号
+     */
+    public $ProjectId;
+
+    /**
+     * @var string 工作流编号
+     */
+    public $WorkflowId;
+
+    /**
+     * @var array 版本信息列表
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Data;
+    public $VersionInfos;
 
     /**
      * @var string 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
@@ -41,7 +55,9 @@ class DeleteTaskDsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param boolean $Data 是否删除成功
+     * @param string $ProjectId 项目编号
+     * @param string $WorkflowId 工作流编号
+     * @param array $VersionInfos 版本信息列表
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
      */
@@ -58,8 +74,21 @@ class DeleteTaskDsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = $param["Data"];
+        if (array_key_exists("ProjectId",$param) and $param["ProjectId"] !== null) {
+            $this->ProjectId = $param["ProjectId"];
+        }
+
+        if (array_key_exists("WorkflowId",$param) and $param["WorkflowId"] !== null) {
+            $this->WorkflowId = $param["WorkflowId"];
+        }
+
+        if (array_key_exists("VersionInfos",$param) and $param["VersionInfos"] !== null) {
+            $this->VersionInfos = [];
+            foreach ($param["VersionInfos"] as $key => $value){
+                $obj = new WorkflowVersionInfo();
+                $obj->deserialize($value);
+                array_push($this->VersionInfos, $obj);
+            }
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
