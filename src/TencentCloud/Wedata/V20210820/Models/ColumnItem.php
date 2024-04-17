@@ -18,23 +18,35 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 返回命令id
+ * ColumnItem
  *
- * @method string getId() 获取返回补录计划id
+ * @method string getColumnName() 获取ColumnName1
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setId(string $Id) 设置返回补录计划id
+ * @method void setColumnName(string $ColumnName) 设置ColumnName1
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getColumnRef() 获取ColumnName1
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setColumnRef(string $ColumnRef) 设置ColumnName1
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class CommonIdOpsDto extends AbstractModel
+class ColumnItem extends AbstractModel
 {
     /**
-     * @var string 返回补录计划id
+     * @var string ColumnName1
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Id;
+    public $ColumnName;
 
     /**
-     * @param string $Id 返回补录计划id
+     * @var string ColumnName1
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $ColumnRef;
+
+    /**
+     * @param string $ColumnName ColumnName1
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $ColumnRef ColumnName1
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -50,8 +62,12 @@ class CommonIdOpsDto extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Id",$param) and $param["Id"] !== null) {
-            $this->Id = $param["Id"];
+        if (array_key_exists("ColumnName",$param) and $param["ColumnName"] !== null) {
+            $this->ColumnName = $param["ColumnName"];
+        }
+
+        if (array_key_exists("ColumnRef",$param) and $param["ColumnRef"] !== null) {
+            $this->ColumnRef = $param["ColumnRef"];
         }
     }
 }

@@ -18,22 +18,18 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteFilePath请求参数结构体
+ * CreateWorkflowDs请求参数结构体
  *
  * @method string getProjectId() 获取项目ID
  * @method void setProjectId(string $ProjectId) 设置项目ID
- * @method array getResourceIds() 获取资源ID
- * @method void setResourceIds(array $ResourceIds) 设置资源ID
- * @method string getUseStatus() 获取使用状态
-- true
-- false
- * @method void setUseStatus(string $UseStatus) 设置使用状态
-- true
-- false
- * @method array getFilePaths() 获取文件路径
- * @method void setFilePaths(array $FilePaths) 设置文件路径
+ * @method string getWorkflowName() 获取工作流名称
+ * @method void setWorkflowName(string $WorkflowName) 设置工作流名称
+ * @method string getFolderId() 获取文件夹ID
+ * @method void setFolderId(string $FolderId) 设置文件夹ID
+ * @method string getWorkflowDesc() 获取工作流描述
+ * @method void setWorkflowDesc(string $WorkflowDesc) 设置工作流描述
  */
-class DeleteFilePathRequest extends AbstractModel
+class CreateWorkflowDsRequest extends AbstractModel
 {
     /**
      * @var string 项目ID
@@ -41,29 +37,25 @@ class DeleteFilePathRequest extends AbstractModel
     public $ProjectId;
 
     /**
-     * @var array 资源ID
+     * @var string 工作流名称
      */
-    public $ResourceIds;
+    public $WorkflowName;
 
     /**
-     * @var string 使用状态
-- true
-- false
+     * @var string 文件夹ID
      */
-    public $UseStatus;
+    public $FolderId;
 
     /**
-     * @var array 文件路径
+     * @var string 工作流描述
      */
-    public $FilePaths;
+    public $WorkflowDesc;
 
     /**
      * @param string $ProjectId 项目ID
-     * @param array $ResourceIds 资源ID
-     * @param string $UseStatus 使用状态
-- true
-- false
-     * @param array $FilePaths 文件路径
+     * @param string $WorkflowName 工作流名称
+     * @param string $FolderId 文件夹ID
+     * @param string $WorkflowDesc 工作流描述
      */
     function __construct()
     {
@@ -82,16 +74,16 @@ class DeleteFilePathRequest extends AbstractModel
             $this->ProjectId = $param["ProjectId"];
         }
 
-        if (array_key_exists("ResourceIds",$param) and $param["ResourceIds"] !== null) {
-            $this->ResourceIds = $param["ResourceIds"];
+        if (array_key_exists("WorkflowName",$param) and $param["WorkflowName"] !== null) {
+            $this->WorkflowName = $param["WorkflowName"];
         }
 
-        if (array_key_exists("UseStatus",$param) and $param["UseStatus"] !== null) {
-            $this->UseStatus = $param["UseStatus"];
+        if (array_key_exists("FolderId",$param) and $param["FolderId"] !== null) {
+            $this->FolderId = $param["FolderId"];
         }
 
-        if (array_key_exists("FilePaths",$param) and $param["FilePaths"] !== null) {
-            $this->FilePaths = $param["FilePaths"];
+        if (array_key_exists("WorkflowDesc",$param) and $param["WorkflowDesc"] !== null) {
+            $this->WorkflowDesc = $param["WorkflowDesc"];
         }
     }
 }

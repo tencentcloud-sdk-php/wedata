@@ -18,59 +18,83 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 数据质量生产调度任务业务实体
+ * Content
  *
- * @method string getWorkflowId() 获取生产调度任务工作流ID
+ * @method string getTaskId() 获取任务id
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setWorkflowId(string $WorkflowId) 设置生产调度任务工作流ID
+ * @method void setTaskId(string $TaskId) 设置任务id
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getTaskId() 获取生产调度任务Id
+ * @method string getTaskName() 获取任务名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTaskId(string $TaskId) 设置生产调度任务Id
+ * @method void setTaskName(string $TaskName) 设置任务名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getTaskName() 获取生产调度任务名称
+ * @method string getDiagnose() 获取诊断
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTaskName(string $TaskName) 设置生产调度任务名称
+ * @method void setDiagnose(string $Diagnose) 设置诊断
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getCycleType() 获取生产调度任务任务类型
+ * @method string getReason() 获取理由
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setCycleType(integer $CycleType) 设置生产调度任务任务类型
+ * @method void setReason(string $Reason) 设置理由
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getOperation() 获取操作
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setOperation(string $Operation) 设置操作
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getUrl() 获取链接
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setUrl(string $Url) 设置链接
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class ProdSchedulerTask extends AbstractModel
+class Content extends AbstractModel
 {
     /**
-     * @var string 生产调度任务工作流ID
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $WorkflowId;
-
-    /**
-     * @var string 生产调度任务Id
+     * @var string 任务id
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $TaskId;
 
     /**
-     * @var string 生产调度任务名称
+     * @var string 任务名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $TaskName;
 
     /**
-     * @var integer 生产调度任务任务类型
+     * @var string 诊断
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $CycleType;
+    public $Diagnose;
 
     /**
-     * @param string $WorkflowId 生产调度任务工作流ID
+     * @var string 理由
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $TaskId 生产调度任务Id
+     */
+    public $Reason;
+
+    /**
+     * @var string 操作
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $TaskName 生产调度任务名称
+     */
+    public $Operation;
+
+    /**
+     * @var string 链接
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $CycleType 生产调度任务任务类型
+     */
+    public $Url;
+
+    /**
+     * @param string $TaskId 任务id
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $TaskName 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $Diagnose 诊断
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $Reason 理由
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $Operation 操作
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $Url 链接
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -86,10 +110,6 @@ class ProdSchedulerTask extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("WorkflowId",$param) and $param["WorkflowId"] !== null) {
-            $this->WorkflowId = $param["WorkflowId"];
-        }
-
         if (array_key_exists("TaskId",$param) and $param["TaskId"] !== null) {
             $this->TaskId = $param["TaskId"];
         }
@@ -98,8 +118,20 @@ class ProdSchedulerTask extends AbstractModel
             $this->TaskName = $param["TaskName"];
         }
 
-        if (array_key_exists("CycleType",$param) and $param["CycleType"] !== null) {
-            $this->CycleType = $param["CycleType"];
+        if (array_key_exists("Diagnose",$param) and $param["Diagnose"] !== null) {
+            $this->Diagnose = $param["Diagnose"];
+        }
+
+        if (array_key_exists("Reason",$param) and $param["Reason"] !== null) {
+            $this->Reason = $param["Reason"];
+        }
+
+        if (array_key_exists("Operation",$param) and $param["Operation"] !== null) {
+            $this->Operation = $param["Operation"];
+        }
+
+        if (array_key_exists("Url",$param) and $param["Url"] !== null) {
+            $this->Url = $param["Url"];
         }
     }
 }

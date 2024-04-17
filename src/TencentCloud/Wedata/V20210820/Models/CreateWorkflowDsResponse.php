@@ -18,22 +18,19 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeDatabaseInfoList返回参数结构体
+ * CreateWorkflowDs返回参数结构体
  *
- * @method array getDatabaseInfo() 获取数据库列表
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setDatabaseInfo(array $DatabaseInfo) 设置数据库列表
-注意：此字段可能返回 null，表示取不到有效值。
+ * @method string getData() 获取工作流ID
+ * @method void setData(string $Data) 设置工作流ID
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeDatabaseInfoListResponse extends AbstractModel
+class CreateWorkflowDsResponse extends AbstractModel
 {
     /**
-     * @var array 数据库列表
-注意：此字段可能返回 null，表示取不到有效值。
+     * @var string 工作流ID
      */
-    public $DatabaseInfo;
+    public $Data;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -41,8 +38,7 @@ class DescribeDatabaseInfoListResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param array $DatabaseInfo 数据库列表
-注意：此字段可能返回 null，表示取不到有效值。
+     * @param string $Data 工作流ID
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -58,13 +54,8 @@ class DescribeDatabaseInfoListResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("DatabaseInfo",$param) and $param["DatabaseInfo"] !== null) {
-            $this->DatabaseInfo = [];
-            foreach ($param["DatabaseInfo"] as $key => $value){
-                $obj = new DatabaseInfo();
-                $obj->deserialize($value);
-                array_push($this->DatabaseInfo, $obj);
-            }
+        if (array_key_exists("Data",$param) and $param["Data"] !== null) {
+            $this->Data = $param["Data"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

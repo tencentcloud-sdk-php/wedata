@@ -18,23 +18,35 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 返回命令id
+ * DiagnoseRep
  *
- * @method string getId() 获取返回补录计划id
+ * @method Content getContent() 获取诊断信息内容
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setId(string $Id) 设置返回补录计划id
+ * @method void setContent(Content $Content) 设置诊断信息内容
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method Table getTable() 获取诊断结果相关信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setTable(Table $Table) 设置诊断结果相关信息列表
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class CommonIdOpsDto extends AbstractModel
+class DiagnoseRep extends AbstractModel
 {
     /**
-     * @var string 返回补录计划id
+     * @var Content 诊断信息内容
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Id;
+    public $Content;
 
     /**
-     * @param string $Id 返回补录计划id
+     * @var Table 诊断结果相关信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $Table;
+
+    /**
+     * @param Content $Content 诊断信息内容
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param Table $Table 诊断结果相关信息列表
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -50,8 +62,14 @@ class CommonIdOpsDto extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Id",$param) and $param["Id"] !== null) {
-            $this->Id = $param["Id"];
+        if (array_key_exists("Content",$param) and $param["Content"] !== null) {
+            $this->Content = new Content();
+            $this->Content->deserialize($param["Content"]);
+        }
+
+        if (array_key_exists("Table",$param) and $param["Table"] !== null) {
+            $this->Table = new Table();
+            $this->Table->deserialize($param["Table"]);
         }
     }
 }
