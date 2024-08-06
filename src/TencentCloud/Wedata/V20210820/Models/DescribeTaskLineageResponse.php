@@ -18,42 +18,29 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeTableMeta返回参数结构体
+ * DescribeTaskLineage返回参数结构体
  *
- * @method TableMeta getTableMeta() 获取表的元数据信息
+ * @method string getRequestFromSource() 获取请求来源，WEB 前端；CLIENT 客户端
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTableMeta(TableMeta $TableMeta) 设置表的元数据信息
+ * @method void setRequestFromSource(string $RequestFromSource) 设置请求来源，WEB 前端；CLIENT 客户端
 注意：此字段可能返回 null，表示取不到有效值。
- * @method LifecycleInfo getLifecycleInfo() 获取生命周期信息
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setLifecycleInfo(LifecycleInfo $LifecycleInfo) 设置生命周期信息
-注意：此字段可能返回 null，表示取不到有效值。
- * @method TagVoteSum getTagVoteSumList() 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTagVoteSumList(TagVoteSum $TagVoteSumList) 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
+ * @method array getTaskLineageInfos() 获取通过任务ID查询集成任务信息列表
+ * @method void setTaskLineageInfos(array $TaskLineageInfos) 设置通过任务ID查询集成任务信息列表
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeTableMetaResponse extends AbstractModel
+class DescribeTaskLineageResponse extends AbstractModel
 {
     /**
-     * @var TableMeta 表的元数据信息
+     * @var string 请求来源，WEB 前端；CLIENT 客户端
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TableMeta;
+    public $RequestFromSource;
 
     /**
-     * @var LifecycleInfo 生命周期信息
-注意：此字段可能返回 null，表示取不到有效值。
+     * @var array 通过任务ID查询集成任务信息列表
      */
-    public $LifecycleInfo;
-
-    /**
-     * @var TagVoteSum 标签
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $TagVoteSumList;
+    public $TaskLineageInfos;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -61,12 +48,9 @@ class DescribeTableMetaResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param TableMeta $TableMeta 表的元数据信息
+     * @param string $RequestFromSource 请求来源，WEB 前端；CLIENT 客户端
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param LifecycleInfo $LifecycleInfo 生命周期信息
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param TagVoteSum $TagVoteSumList 标签
-注意：此字段可能返回 null，表示取不到有效值。
+     * @param array $TaskLineageInfos 通过任务ID查询集成任务信息列表
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -82,19 +66,17 @@ class DescribeTableMetaResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("TableMeta",$param) and $param["TableMeta"] !== null) {
-            $this->TableMeta = new TableMeta();
-            $this->TableMeta->deserialize($param["TableMeta"]);
+        if (array_key_exists("RequestFromSource",$param) and $param["RequestFromSource"] !== null) {
+            $this->RequestFromSource = $param["RequestFromSource"];
         }
 
-        if (array_key_exists("LifecycleInfo",$param) and $param["LifecycleInfo"] !== null) {
-            $this->LifecycleInfo = new LifecycleInfo();
-            $this->LifecycleInfo->deserialize($param["LifecycleInfo"]);
-        }
-
-        if (array_key_exists("TagVoteSumList",$param) and $param["TagVoteSumList"] !== null) {
-            $this->TagVoteSumList = new TagVoteSum();
-            $this->TagVoteSumList->deserialize($param["TagVoteSumList"]);
+        if (array_key_exists("TaskLineageInfos",$param) and $param["TaskLineageInfos"] !== null) {
+            $this->TaskLineageInfos = [];
+            foreach ($param["TaskLineageInfos"] as $key => $value){
+                $obj = new TaskLineageInfoPair();
+                $obj->deserialize($value);
+                array_push($this->TaskLineageInfos, $obj);
+            }
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
