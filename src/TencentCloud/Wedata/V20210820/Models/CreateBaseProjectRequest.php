@@ -20,14 +20,18 @@ use TencentCloud\Common\AbstractModel;
 /**
  * CreateBaseProject请求参数结构体
  *
-
+ * @method BaseProject getProject() 获取项目信息
+ * @method void setProject(BaseProject $Project) 设置项目信息
  */
 class CreateBaseProjectRequest extends AbstractModel
 {
-
+    /**
+     * @var BaseProject 项目信息
+     */
+    public $Project;
 
     /**
-
+     * @param BaseProject $Project 项目信息
      */
     function __construct()
     {
@@ -42,6 +46,9 @@ class CreateBaseProjectRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-
+        if (array_key_exists("Project",$param) and $param["Project"] !== null) {
+            $this->Project = new BaseProject();
+            $this->Project->deserialize($param["Project"]);
+        }
     }
 }
