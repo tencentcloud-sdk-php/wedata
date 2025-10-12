@@ -18,17 +18,17 @@ namespace TencentCloud\Wedata\V20250806\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DeleteWorkflow返回参数结构体
+ * ListProjectMembers返回参数结构体
  *
- * @method DeleteWorkflowResult getData() 获取是否删除成功
- * @method void setData(DeleteWorkflowResult $Data) 设置是否删除成功
+ * @method ProjectUsersBrief getData() 获取项目列表
+ * @method void setData(ProjectUsersBrief $Data) 设置项目列表
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class DeleteWorkflowResponse extends AbstractModel
+class ListProjectMembersResponse extends AbstractModel
 {
     /**
-     * @var DeleteWorkflowResult 是否删除成功
+     * @var ProjectUsersBrief 项目列表
      */
     public $Data;
 
@@ -38,7 +38,7 @@ class DeleteWorkflowResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param DeleteWorkflowResult $Data 是否删除成功
+     * @param ProjectUsersBrief $Data 项目列表
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -55,7 +55,7 @@ class DeleteWorkflowResponse extends AbstractModel
             return;
         }
         if (array_key_exists("Data",$param) and $param["Data"] !== null) {
-            $this->Data = new DeleteWorkflowResult();
+            $this->Data = new ProjectUsersBrief();
             $this->Data->deserialize($param["Data"]);
         }
 

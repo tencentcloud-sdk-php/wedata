@@ -18,59 +18,71 @@ namespace TencentCloud\Wedata\V20250806\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 资源文件夹分页
+ * ExecutorResourceGroup分页对象
  *
- * @method array getItems() 获取资源文件夹集合信息
- * @method void setItems(array $Items) 设置资源文件夹集合信息
- * @method integer getTotalPageNumber() 获取总页数
- * @method void setTotalPageNumber(integer $TotalPageNumber) 设置总页数
- * @method integer getTotalCount() 获取总数量
- * @method void setTotalCount(integer $TotalCount) 设置总数量
- * @method integer getPageNumber() 获取当前页
+ * @method array getItems() 获取结果list
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setPageNumber(integer $PageNumber) 设置当前页
+ * @method void setItems(array $Items) 设置结果list
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getPageSize() 获取每页显示数
+ * @method integer getTotalCount() 获取总条数
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setPageSize(integer $PageSize) 设置每页显示数
+ * @method void setTotalCount(integer $TotalCount) 设置总条数
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method integer getPageNumber() 获取页数
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setPageNumber(integer $PageNumber) 设置页数
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method integer getPageSize() 获取页大小
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setPageSize(integer $PageSize) 设置页大小
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method integer getTotalPageNumber() 获取总分页页码
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setTotalPageNumber(integer $TotalPageNumber) 设置总分页页码
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class ResourceFolderPage extends AbstractModel
+class ExecutorResourceGroupData extends AbstractModel
 {
     /**
-     * @var array 资源文件夹集合信息
+     * @var array 结果list
+注意：此字段可能返回 null，表示取不到有效值。
      */
     public $Items;
 
     /**
-     * @var integer 总页数
-     */
-    public $TotalPageNumber;
-
-    /**
-     * @var integer 总数量
+     * @var integer 总条数
+注意：此字段可能返回 null，表示取不到有效值。
      */
     public $TotalCount;
 
     /**
-     * @var integer 当前页
+     * @var integer 页数
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $PageNumber;
 
     /**
-     * @var integer 每页显示数
+     * @var integer 页大小
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $PageSize;
 
     /**
-     * @param array $Items 资源文件夹集合信息
-     * @param integer $TotalPageNumber 总页数
-     * @param integer $TotalCount 总数量
-     * @param integer $PageNumber 当前页
+     * @var integer 总分页页码
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $PageSize 每页显示数
+     */
+    public $TotalPageNumber;
+
+    /**
+     * @param array $Items 结果list
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param integer $TotalCount 总条数
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param integer $PageNumber 页数
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param integer $PageSize 页大小
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param integer $TotalPageNumber 总分页页码
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -89,14 +101,10 @@ class ResourceFolderPage extends AbstractModel
         if (array_key_exists("Items",$param) and $param["Items"] !== null) {
             $this->Items = [];
             foreach ($param["Items"] as $key => $value){
-                $obj = new ResourceFolder();
+                $obj = new ExecutorResourceGroupInfo();
                 $obj->deserialize($value);
                 array_push($this->Items, $obj);
             }
-        }
-
-        if (array_key_exists("TotalPageNumber",$param) and $param["TotalPageNumber"] !== null) {
-            $this->TotalPageNumber = $param["TotalPageNumber"];
         }
 
         if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
@@ -109,6 +117,10 @@ class ResourceFolderPage extends AbstractModel
 
         if (array_key_exists("PageSize",$param) and $param["PageSize"] !== null) {
             $this->PageSize = $param["PageSize"];
+        }
+
+        if (array_key_exists("TotalPageNumber",$param) and $param["TotalPageNumber"] !== null) {
+            $this->TotalPageNumber = $param["TotalPageNumber"];
         }
     }
 }
