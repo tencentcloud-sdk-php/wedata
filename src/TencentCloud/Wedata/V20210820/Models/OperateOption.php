@@ -18,20 +18,24 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeReportTaskDetail请求参数结构体
+ * 数据资产操作标记
  *
- * @method string getEngineTaskId() 获取引擎任务id
- * @method void setEngineTaskId(string $EngineTaskId) 设置引擎任务id
+ * @method boolean getHasProjectPermission() 获取是否有修改归属项目权限
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setHasProjectPermission(boolean $HasProjectPermission) 设置是否有修改归属项目权限
+注意：此字段可能返回 null，表示取不到有效值。
  */
-class DescribeReportTaskDetailRequest extends AbstractModel
+class OperateOption extends AbstractModel
 {
     /**
-     * @var string 引擎任务id
+     * @var boolean 是否有修改归属项目权限
+注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $EngineTaskId;
+    public $HasProjectPermission;
 
     /**
-     * @param string $EngineTaskId 引擎任务id
+     * @param boolean $HasProjectPermission 是否有修改归属项目权限
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
@@ -46,8 +50,8 @@ class DescribeReportTaskDetailRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("EngineTaskId",$param) and $param["EngineTaskId"] !== null) {
-            $this->EngineTaskId = $param["EngineTaskId"];
+        if (array_key_exists("HasProjectPermission",$param) and $param["HasProjectPermission"] !== null) {
+            $this->HasProjectPermission = $param["HasProjectPermission"];
         }
     }
 }

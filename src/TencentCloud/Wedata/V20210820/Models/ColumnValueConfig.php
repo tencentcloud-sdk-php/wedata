@@ -18,11 +18,11 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 字段变量
+ * 字段值变量
  *
- * @method string getFieldKey() 获取字段key
+ * @method string getFieldKey() 获取字段值key
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setFieldKey(string $FieldKey) 设置字段key
+ * @method void setFieldKey(string $FieldKey) 设置字段值key
 注意：此字段可能返回 null，表示取不到有效值。
  * @method string getFieldValue() 获取字段值
 注意：此字段可能返回 null，表示取不到有效值。
@@ -32,15 +32,11 @@ use TencentCloud\Common\AbstractModel;
 注意：此字段可能返回 null，表示取不到有效值。
  * @method void setFieldDataType(string $FieldDataType) 设置字段值类型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method ColumnValueConfig getValueConfig() 获取字段值变量信息
-注意：此字段可能返回 null，表示取不到有效值。
- * @method void setValueConfig(ColumnValueConfig $ValueConfig) 设置字段值变量信息
-注意：此字段可能返回 null，表示取不到有效值。
  */
-class FieldConfig extends AbstractModel
+class ColumnValueConfig extends AbstractModel
 {
     /**
-     * @var string 字段key
+     * @var string 字段值key
 注意：此字段可能返回 null，表示取不到有效值。
      */
     public $FieldKey;
@@ -58,19 +54,11 @@ class FieldConfig extends AbstractModel
     public $FieldDataType;
 
     /**
-     * @var ColumnValueConfig 字段值变量信息
-注意：此字段可能返回 null，表示取不到有效值。
-     */
-    public $ValueConfig;
-
-    /**
-     * @param string $FieldKey 字段key
+     * @param string $FieldKey 字段值key
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $FieldValue 字段值
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $FieldDataType 字段值类型
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param ColumnValueConfig $ValueConfig 字段值变量信息
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -96,11 +84,6 @@ class FieldConfig extends AbstractModel
 
         if (array_key_exists("FieldDataType",$param) and $param["FieldDataType"] !== null) {
             $this->FieldDataType = $param["FieldDataType"];
-        }
-
-        if (array_key_exists("ValueConfig",$param) and $param["ValueConfig"] !== null) {
-            $this->ValueConfig = new ColumnValueConfig();
-            $this->ValueConfig->deserialize($param["ValueConfig"]);
         }
     }
 }
