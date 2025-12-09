@@ -18,107 +18,107 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 数据质量生产调度任务业务实体
+ * 资产维度关联数据表字段结构定义
  *
- * @method string getWorkflowId() 获取生产调度任务工作流ID
+ * @method string getColumnName() 获取表字段名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setWorkflowId(string $WorkflowId) 设置生产调度任务工作流ID
+ * @method void setColumnName(string $ColumnName) 设置表字段名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getTaskId() 获取生产调度任务Id
+ * @method string getColumnNameCn() 获取表字段中文名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTaskId(string $TaskId) 设置生产调度任务Id
+ * @method void setColumnNameCn(string $ColumnNameCn) 设置表字段中文名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getTaskName() 获取生产调度任务名称
+ * @method string getColumnType() 获取表字段类型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTaskName(string $TaskName) 设置生产调度任务名称
+ * @method void setColumnType(string $ColumnType) 设置表字段类型
 注意：此字段可能返回 null，表示取不到有效值。
- * @method integer getCycleType() 获取生产调度任务任务类型
+ * @method string getColumnDescription() 获取表字段描述
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setCycleType(integer $CycleType) 设置生产调度任务任务类型
+ * @method void setColumnDescription(string $ColumnDescription) 设置表字段描述
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getTaskType() 获取生产任务类型
+ * @method string getTableName() 获取表名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setTaskType(string $TaskType) 设置生产任务类型
+ * @method void setTableName(string $TableName) 设置表名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getScheduleTimeZone() 获取时区
+ * @method string getTableGuid() 获取表GUID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setScheduleTimeZone(string $ScheduleTimeZone) 设置时区
+ * @method void setTableGuid(string $TableGuid) 设置表GUID
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getInChargeIdList() 获取负责人id
+ * @method string getDatabaseName() 获取表归属的数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setInChargeIdList(array $InChargeIdList) 设置负责人id
+ * @method void setDatabaseName(string $DatabaseName) 设置表归属的数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method array getInChargeNameList() 获取负责人name
+ * @method string getSchemaName() 获取表归属的Schema名称
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setInChargeNameList(array $InChargeNameList) 设置负责人name
+ * @method void setSchemaName(string $SchemaName) 设置表归属的Schema名称
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class ProdSchedulerTask extends AbstractModel
+class AssetDimTableColumn extends AbstractModel
 {
     /**
-     * @var string 生产调度任务工作流ID
+     * @var string 表字段名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $WorkflowId;
+    public $ColumnName;
 
     /**
-     * @var string 生产调度任务Id
+     * @var string 表字段中文名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TaskId;
+    public $ColumnNameCn;
 
     /**
-     * @var string 生产调度任务名称
+     * @var string 表字段类型
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TaskName;
+    public $ColumnType;
 
     /**
-     * @var integer 生产调度任务任务类型
+     * @var string 表字段描述
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $CycleType;
+    public $ColumnDescription;
 
     /**
-     * @var string 生产任务类型
+     * @var string 表名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $TaskType;
+    public $TableName;
 
     /**
-     * @var string 时区
+     * @var string 表GUID
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $ScheduleTimeZone;
+    public $TableGuid;
 
     /**
-     * @var array 负责人id
+     * @var string 表归属的数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $InChargeIdList;
+    public $DatabaseName;
 
     /**
-     * @var array 负责人name
+     * @var string 表归属的Schema名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $InChargeNameList;
+    public $SchemaName;
 
     /**
-     * @param string $WorkflowId 生产调度任务工作流ID
+     * @param string $ColumnName 表字段名称
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $TaskId 生产调度任务Id
+     * @param string $ColumnNameCn 表字段中文名称
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $TaskName 生产调度任务名称
+     * @param string $ColumnType 表字段类型
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param integer $CycleType 生产调度任务任务类型
+     * @param string $ColumnDescription 表字段描述
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $TaskType 生产任务类型
+     * @param string $TableName 表名称
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $ScheduleTimeZone 时区
+     * @param string $TableGuid 表GUID
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $InChargeIdList 负责人id
+     * @param string $DatabaseName 表归属的数据库名称
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param array $InChargeNameList 负责人name
+     * @param string $SchemaName 表归属的Schema名称
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -134,36 +134,36 @@ class ProdSchedulerTask extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("WorkflowId",$param) and $param["WorkflowId"] !== null) {
-            $this->WorkflowId = $param["WorkflowId"];
+        if (array_key_exists("ColumnName",$param) and $param["ColumnName"] !== null) {
+            $this->ColumnName = $param["ColumnName"];
         }
 
-        if (array_key_exists("TaskId",$param) and $param["TaskId"] !== null) {
-            $this->TaskId = $param["TaskId"];
+        if (array_key_exists("ColumnNameCn",$param) and $param["ColumnNameCn"] !== null) {
+            $this->ColumnNameCn = $param["ColumnNameCn"];
         }
 
-        if (array_key_exists("TaskName",$param) and $param["TaskName"] !== null) {
-            $this->TaskName = $param["TaskName"];
+        if (array_key_exists("ColumnType",$param) and $param["ColumnType"] !== null) {
+            $this->ColumnType = $param["ColumnType"];
         }
 
-        if (array_key_exists("CycleType",$param) and $param["CycleType"] !== null) {
-            $this->CycleType = $param["CycleType"];
+        if (array_key_exists("ColumnDescription",$param) and $param["ColumnDescription"] !== null) {
+            $this->ColumnDescription = $param["ColumnDescription"];
         }
 
-        if (array_key_exists("TaskType",$param) and $param["TaskType"] !== null) {
-            $this->TaskType = $param["TaskType"];
+        if (array_key_exists("TableName",$param) and $param["TableName"] !== null) {
+            $this->TableName = $param["TableName"];
         }
 
-        if (array_key_exists("ScheduleTimeZone",$param) and $param["ScheduleTimeZone"] !== null) {
-            $this->ScheduleTimeZone = $param["ScheduleTimeZone"];
+        if (array_key_exists("TableGuid",$param) and $param["TableGuid"] !== null) {
+            $this->TableGuid = $param["TableGuid"];
         }
 
-        if (array_key_exists("InChargeIdList",$param) and $param["InChargeIdList"] !== null) {
-            $this->InChargeIdList = $param["InChargeIdList"];
+        if (array_key_exists("DatabaseName",$param) and $param["DatabaseName"] !== null) {
+            $this->DatabaseName = $param["DatabaseName"];
         }
 
-        if (array_key_exists("InChargeNameList",$param) and $param["InChargeNameList"] !== null) {
-            $this->InChargeNameList = $param["InChargeNameList"];
+        if (array_key_exists("SchemaName",$param) and $param["SchemaName"] !== null) {
+            $this->SchemaName = $param["SchemaName"];
         }
     }
 }

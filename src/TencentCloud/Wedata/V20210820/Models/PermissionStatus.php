@@ -18,35 +18,47 @@ namespace TencentCloud\Wedata\V20210820\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 返回命令id
+ * 读写权限状态
  *
- * @method string getId() 获取返回补录计划名称_ok
+ * @method boolean getCanWrite() 获取写权限
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setId(string $Id) 设置返回补录计划名称_ok
+ * @method void setCanWrite(boolean $CanWrite) 设置写权限
 注意：此字段可能返回 null，表示取不到有效值。
- * @method string getMakeId() 获取补录计划Id
+ * @method boolean getCanDelete() 获取写权限
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setMakeId(string $MakeId) 设置补录计划Id
+ * @method void setCanDelete(boolean $CanDelete) 设置写权限
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method boolean getCanRead() 获取写权限
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setCanRead(boolean $CanRead) 设置写权限
 注意：此字段可能返回 null，表示取不到有效值。
  */
-class CommonIdOpsDto extends AbstractModel
+class PermissionStatus extends AbstractModel
 {
     /**
-     * @var string 返回补录计划名称_ok
+     * @var boolean 写权限
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $Id;
+    public $CanWrite;
 
     /**
-     * @var string 补录计划Id
+     * @var boolean 写权限
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $MakeId;
+    public $CanDelete;
 
     /**
-     * @param string $Id 返回补录计划名称_ok
+     * @var boolean 写权限
 注意：此字段可能返回 null，表示取不到有效值。
-     * @param string $MakeId 补录计划Id
+     */
+    public $CanRead;
+
+    /**
+     * @param boolean $CanWrite 写权限
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param boolean $CanDelete 写权限
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param boolean $CanRead 写权限
 注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
@@ -62,12 +74,16 @@ class CommonIdOpsDto extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Id",$param) and $param["Id"] !== null) {
-            $this->Id = $param["Id"];
+        if (array_key_exists("CanWrite",$param) and $param["CanWrite"] !== null) {
+            $this->CanWrite = $param["CanWrite"];
         }
 
-        if (array_key_exists("MakeId",$param) and $param["MakeId"] !== null) {
-            $this->MakeId = $param["MakeId"];
+        if (array_key_exists("CanDelete",$param) and $param["CanDelete"] !== null) {
+            $this->CanDelete = $param["CanDelete"];
+        }
+
+        if (array_key_exists("CanRead",$param) and $param["CanRead"] !== null) {
+            $this->CanRead = $param["CanRead"];
         }
     }
 }
