@@ -20,26 +20,26 @@ use TencentCloud\Common\AbstractModel;
 /**
  * 通用排序字段
  *
- * @method string getName() 获取排序字段名称
- * @method void setName(string $Name) 设置排序字段名称
- * @method string getDirection() 获取排序方向：ASC|DESC
- * @method void setDirection(string $Direction) 设置排序方向：ASC|DESC
+ * @method string getName() 获取<p>排序字段名称</p>
+ * @method void setName(string $Name) 设置<p>排序字段名称</p>
+ * @method string getDirection() 获取<p>排序方向：ASC|DESC</p>
+ * @method void setDirection(string $Direction) 设置<p>排序方向：ASC|DESC</p>
  */
 class OrderField extends AbstractModel
 {
     /**
-     * @var string 排序字段名称
+     * @var string <p>排序字段名称</p>
      */
     public $Name;
 
     /**
-     * @var string 排序方向：ASC|DESC
+     * @var string <p>排序方向：ASC|DESC</p>
      */
     public $Direction;
 
     /**
-     * @param string $Name 排序字段名称
-     * @param string $Direction 排序方向：ASC|DESC
+     * @param string $Name <p>排序字段名称</p>
+     * @param string $Direction <p>排序方向：ASC|DESC</p>
      */
     function __construct()
     {
